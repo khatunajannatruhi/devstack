@@ -17,6 +17,7 @@
     "vite": "^8.3.0"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "react-toastify": "^11.1.0"
   }
 }
