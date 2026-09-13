@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <nav className="navbar bg-base-100 sticky top-0 z-50 border-b border-base-200 px-4 md:px-8">
+    <nav className="navbar bg-base-100 sticky top-0 z-50 shadow-md px-4 md:px-8">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden pl-0">
