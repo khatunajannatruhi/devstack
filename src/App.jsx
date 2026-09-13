@@ -3,6 +3,7 @@ import Header from './ui/Header';
 import FooterBlock from './ui/FooterBlock';
 import TopBanner from './ui/TopBanner';
 import TechnologyItem from './ui/TechnologyItem';
+import MyStackPanel from './ui/MyStackPanel';
 
 function App() {
   const [techList, setTechList] = useState([]);
@@ -61,8 +62,13 @@ function App() {
                 ))}
               </div>
               
-              {/* Stack Panel Placeholder */}
-              <div className="hidden lg:block lg:w-[320px]"></div>
+              <div className="w-full lg:w-[320px] shrink-0">
+                <MyStackPanel 
+                  selectedTechs={[]}
+                  handleRemove={() => {}}
+                  handleClearAll={() => {}}
+                />
+              </div>
             </div>
           )}
         </div>
