@@ -84,7 +84,7 @@
     "name": "VS Code",
     "category": "Tools",
     "description": "A source-code editor made by Microsoft for Windows, Linux and macOS.",
-    "icon": "https://icon.icepanel.io/Technology/svg/Visual-Studio-Code.svg",
+    "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
     "badge": "Editor"
