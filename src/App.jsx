@@ -28,9 +28,19 @@ function App() {
     loadTechData();
   }, []);
 
+  const [selectedTechs, setSelectedTechs] = useState([]);
+
   const handleSelectTech = (item) => {
-    // Logic for adding to stack will go here
-    console.log("Selected", item);
+    if (selectedTechs.some(t => t.id === item.id)) return;
+    setSelectedTechs(prev => [...prev, item]);
+  };
+
+  const handleRemoveItem = (id) => {
+    setSelectedTechs(prev => prev.filter(tech => tech.id !== id));
+  };
+
+  const handleClearStack = () => {
+    setSelectedTechs([]);
   };
 
   return (
@@ -57,16 +67,16 @@ function App() {
                     key={item.id}
                     item={item}
                     handleSelect={handleSelectTech}
-                    alreadyAdded={false} // Will be updated in Stack Logic commit
+                    alreadyAdded={selectedTechs.some(t => t.id === item.id)}
                   />
                 ))}
               </div>
               
               <div className="w-full lg:w-[320px] shrink-0">
                 <MyStackPanel 
-                  selectedTechs={[]}
-                  handleRemove={() => {}}
-                  handleClearAll={() => {}}
+                  selectedTechs={selectedTechs}
+                  handleRemove={handleRemoveItem}
+                  handleClearAll={handleClearStack}
                 />
               </div>
             </div>
