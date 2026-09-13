@@ -4,6 +4,8 @@ import FooterBlock from './ui/FooterBlock';
 import TopBanner from './ui/TopBanner';
 import TechnologyItem from './ui/TechnologyItem';
 import MyStackPanel from './ui/MyStackPanel';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [techList, setTechList] = useState([]);
@@ -31,20 +33,30 @@ function App() {
   const [selectedTechs, setSelectedTechs] = useState([]);
 
   const handleSelectTech = (item) => {
-    if (selectedTechs.some(t => t.id === item.id)) return;
+    if (selectedTechs.some(t => t.id === item.id)) {
+      toast.warn(`You have already selected ${item.name}`);
+      return;
+    }
     setSelectedTechs(prev => [...prev, item]);
+    toast.success(`${item.name} has been added successfully`);
   };
 
   const handleRemoveItem = (id) => {
+    const itemToRemove = selectedTechs.find(t => t.id === id);
     setSelectedTechs(prev => prev.filter(tech => tech.id !== id));
+    if (itemToRemove) {
+      toast.info(`${itemToRemove.name} was removed`);
+    }
   };
 
   const handleClearStack = () => {
     setSelectedTechs([]);
+    toast.error("All technologies cleared");
   };
 
   return (
     <div className="min-h-screen flex flex-col font-sans text-base-content bg-base-100">
+      <ToastContainer position="bottom-right" autoClose={3000} theme="light" />
       <Header />
       <main className="flex-grow pb-16">
         <TopBanner />
