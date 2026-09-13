@@ -18,7 +18,7 @@ export default function TopBanner() {
           </div>
           <div className="lg:w-1/2 order-1 lg:order-2 flex justify-center">
             <img 
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop" 
+              src="/banner-stack.png" 
               alt="Programming Workspace" 
               className="rounded-xl shadow-xl w-full max-w-lg object-cover aspect-video" 
             />

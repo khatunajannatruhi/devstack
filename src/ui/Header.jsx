@@ -14,8 +14,8 @@ export default function Header() {
             <li><a>Contact</a></li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl px-0 md:px-4">
-          <span className="text-brand-gradient font-bold">Dev</span> Stack
+        <a className="btn btn-ghost px-0 md:px-4 hover:bg-transparent">
+          <img src="/logo-text.png" alt="Dev Stack" className="h-8 object-contain" />
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
